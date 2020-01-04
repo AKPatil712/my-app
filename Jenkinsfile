@@ -9,13 +9,7 @@ pipeline {
                 bat "mvn clean "
             }
         }
-         stage('test') {
-            steps{
-                echo 'testing'
-                bat "mvn test"
-            }
-        }
-         stage('deploy') {
+        stage('deploy') {
             steps{
                 echo 'deploying'
                 bat "mvn package"
