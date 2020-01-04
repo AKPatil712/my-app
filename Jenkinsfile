@@ -2,27 +2,23 @@ pipeline {
     agent any
     
     stages {
-        stage('clone'){
+
+        stage('clone') {
             steps{
                 echo 'cloning'
-                bat "mvn clean  my-app"
+                bat "mvn clean "
             }
         }
-         stage('build'){
-            steps{
-                echo 'building'
-            }
-        }
-         stage('test'){
+         stage('test') {
             steps{
                 echo 'testing'
-                bat "mvn test  my-app"
+                bat "mvn test"
             }
         }
-         stage('deploy'){
+         stage('deploy') {
             steps{
                 echo 'deploying'
-                bat "mvn package my-app"
+                bat "mvn package"
                 }
         }
     }
